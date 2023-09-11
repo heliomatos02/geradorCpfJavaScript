@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bem vindo!</title>
-        <script src="./gerarCpf.js"></script>
-    </head>
 
-    <body>
-        <h1>Esse é o gerador de CPF</h1>
-           <input type="text" id="campoCpfFull" placeholder="CPF a ser gerado" disabled="true">
-            <button onclick="gerarCpf()">Gerar CPF</button>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo!</title>
+    <script src="./gerarCpf.js"></script>
+</head>
+
+<body>
+    <h1>Esse é o gerador de CPF</h1>
+    <div>
+        <input type="text" id="campoCpfFull" placeholder="CPF a ser gerado" disabled="true">
+        <button onclick="gerarCpf()">Gerar CPF</button>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="campoCpfUF" placeholder="CPF a ser gerado" disabled="true">
+        <select name="uf" id="uf">
+            <option value="">Selecione a UF</option>
+             <option value="2">Acre</option>
+            <option value="4">Alagoas</option>
+            <option value="2">Amapá</option>
+            <option value="2">Amazonas</option>
+            <option value="5">Bahia</option>
+            <option value="3">Ceará</option>
+            <option value="1">Distrito Federal</option>
+            <option value="7">Espírito Santo</option>
+            <option value="1">Goiás</option>
+            <option value="3">Maranhão</option>
+            <option value="1">Mato Grosso</option>
+            <option value="1">Mato Grosso do Sul</option>
+            <option value="6">Minas Gerais</option>
+            <option value="2">Pará</option>
+            <option value="4">Paraíba</option>
+            <option value="9">Paraná</option>
+            <option value="4">Pernambuco</option>
+            <option value="3">Piauí</option>
+            <option value="7">Rio de Janeiro</option>
+            <option value="4">Rio Grande do Norte</option>
+            <option value="0">Rio Grande do Sul</option>
+            <option value="2">Rondônia</option>
+            <option value="2">Roraima</option>
+            <option value="9">Santa Catarina</option>
+            <option value="8">São Paulo</option>
+            <option value="5">Sergipe</option>
+            <option value="1">Tocantins</option>
+            </select>
+        <button onclick="gerarCpfUF()">Gerar CPF por UF</button>
+    </div>
+</body>
+
 </html>
