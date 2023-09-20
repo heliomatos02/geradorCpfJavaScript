@@ -12,7 +12,7 @@ function gerarCpf() {
     cpf = cpf.concat(geradorDigitoUF());
     cpf = cpf.concat(calcularDvUm(cpf));
     cpf = cpf.concat(calcularDvDois(cpf));
-    document.getElementById("campoCpfFull").value = cpf;
+    document.getElementById("campoCpfFull").value = mascaraCpf(cpf);
 }
 
 // calcula o dígito da região fiscal
@@ -65,9 +65,18 @@ function gerarCpfUF() {
         cpf = cpf.concat(select.value);
         cpf = cpf.concat(calcularDvUm(cpf));
         cpf = cpf.concat(calcularDvDois(cpf));
-        document.getElementById("campoCpfUF").value = cpf;
+        document.getElementById("campoCpfUF").value = mascaraCpf(cpf);;
     }else{
         alert("Gentileza informar a Unidade Federativa!");    
     }
     
+}
+
+  function mascaraCpf(v){
+    v=v.replace(/\D/g,"")                    //Remove tudo o que não é dígito
+    v=v.replace(/(\d{3})(\d)/,"$1.$2")       //Coloca um ponto entre o terceiro e o quarto dígitos
+    v=v.replace(/(\d{3})(\d)/,"$1.$2")       //Coloca um ponto entre o terceiro e o quarto dígitos
+                                             //de novo (para o segundo bloco de números)
+    v=v.replace(/(\d{3})(\d{1,2})$/,"$1-$2") //Coloca um hífen entre o terceiro e o quarto dígitos
+    return v
 }
